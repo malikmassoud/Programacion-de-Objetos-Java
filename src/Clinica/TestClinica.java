@@ -7,13 +7,15 @@ public class TestClinica {
         Scanner teclado = new Scanner(System.in);
         String nombrePaciente, nombreDoctor, especialidad, genero;
         double pesoPaciente, estaturaPaciente;
+        int valorConsulta;
+        Paciente paciente;
 
         int option;
 
         do {
             System.out.println("====== Clínica Olor a Clavel ======");
             System.out.println("1. Crear Doctor");
-            System.out.println("2. 2.Mostrar todos los datos (tanto del doctor como de su paciente)");
+            System.out.println("2. Mostrar todos los datos (tanto del doctor como de su paciente)");
             System.out.println("3. Estado del Paciente y su Metabolismo Basal");
             System.out.println("4. Total a pagar");
             System.out.println("5. Modificar el género del paciente (validar que no sea el mismo que tenía)");
@@ -23,11 +25,19 @@ public class TestClinica {
 
             switch (option) {
                 case 1:
-                    System.out.println("Has seleccionado crear Doctor");
                     Paciente paciente1 = new Paciente("Malik", 55.4,"Masculino", 177);
-
+                    teclado.nextLine();
+                    System.out.println("Ingrese el nombre del doctor: ");
+                    nombreDoctor = teclado.nextLine();
+                    System.out.println("Ingrese la especialidad del doctor: ");
+                    especialidad = teclado.nextLine();
+                    System.out.println("Ingresar el valor de la consulta: ");
+                    valorConsulta = teclado.nextInt();
                     break;
                 case 2:
+                    if (paciente1==null){
+
+                    }
                     System.out.println("Has seleccionado la Opción 2.");
                     // Código para la opción 2
                     break;
