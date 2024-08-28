@@ -57,7 +57,7 @@ public class Aerolinea {
                          System.out.println("numero del pasaje: " + pasajero.getPasaje().getNumPasaje());
                          System.out.println("Destino de viaje: " + pasajero.getPasaje().getDestino());
                          System.out.println("Valor Base del vuelo: " + pasajero.getPasaje().getValorBase());
-                         System.out.println("Cantidad de abono: " + pasajero.getPasaje().getCantidadAbono());
+                         System.out.println("Cantidad de abono: " + Math.round(pasajero.getPasaje().getCantidadAbono()));
 
                          System.out.println("Datos del Pasajero: \t\n");
                          System.out.println("nombre del Pasajero: " + pasajero.getNombre());
@@ -76,6 +76,10 @@ public class Aerolinea {
                      }else {
                          System.out.println("Debe crear un PASAJERO");
                      }
+                     break;
+                 case 4:
+                     System.out.println("\tBienvenido al los BlackDays");
+                     pasajero.getPasaje().blackDays();
 
 
              }
