@@ -5,10 +5,10 @@ import java.util.Scanner;
 public class TestClinica {
     public static void main(String[] args) {
         Scanner teclado = new Scanner(System.in);
-        String nombrePaciente, nombreDoctor, especialidad, genero;
+        String nombrePaciente, nombreDoctor, especialidad, generoPaciente;
         double pesoPaciente, estaturaPaciente;
         int valorConsulta;
-        Paciente paciente;
+        Paciente paciente1 = null;
 
         int option;
 
@@ -20,24 +20,24 @@ public class TestClinica {
             System.out.println("4. Total a pagar");
             System.out.println("5. Modificar el género del paciente (validar que no sea el mismo que tenía)");
             System.out.println("6. Salir");
-            System.out.print("Seleccione una opción: ");
+            System.out.print("Seleccione una opción: \n");
             option = teclado.nextInt();
 
             switch (option) {
                 case 1:
-                    Paciente paciente1 = new Paciente("Malik", 55.4,"Masculino", 177);
+                    System.out.println("\t*** Creacion de Doctor y Paciente\n");
                     teclado.nextLine();
-                    System.out.println("Ingrese el nombre del doctor: ");
-                    nombreDoctor = teclado.nextLine();
-                    System.out.println("Ingrese la especialidad del doctor: ");
-                    especialidad = teclado.nextLine();
-                    System.out.println("Ingresar el valor de la consulta: ");
-                    valorConsulta = teclado.nextInt();
+                    System.out.println("Ingrese el nombre del paciente: ");
+                    nombrePaciente = teclado.nextLine();
+                    System.out.println("Ingrese el peso en KG del paciente: ");
+                    pesoPaciente = teclado.nextDouble();
+                    teclado.nextLine();
+                    System.out.println("Ingrese el genero del paciente: ");
+                    generoPaciente = teclado.nextLine();
+                    System.out.println("Ingrese la altura del paciente en centimetros: ");
+                    estaturaPaciente = teclado.nextDouble();
                     break;
                 case 2:
-                    if (paciente1==null){
-
-                    }
                     System.out.println("Has seleccionado la Opción 2.");
                     // Código para la opción 2
                     break;
