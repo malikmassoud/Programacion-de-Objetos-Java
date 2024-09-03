@@ -55,7 +55,7 @@ public class DatosPersonales {
     }
 
     public int aguinaldo(){
-        if ((añosInstitucion>=3 && añosInstitucion>=5) && (grado == 'T' || grado=='L'))
+        if ((añosInstitucion>=3 && añosInstitucion<=5) && (grado == 'T' || grado=='L'))
             return 90000;
         if ((añosInstitucion>=6 && añosInstitucion<=8) && (grado == 'T' || grado=='M'))
             return 110000;
