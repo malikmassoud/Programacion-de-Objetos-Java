@@ -37,4 +37,9 @@ public class Actividad {
     public void setCantidadHoras(int cantidadHoras) {
         this.cantidadHoras = cantidadHoras;
     }
+
+    public void aumentarHoras(){
+        if (tipo.compareToIgnoreCase("Encargo")==0)
+            cantidadHoras = (int)(cantidadHoras * 1.40);
+    }
 }

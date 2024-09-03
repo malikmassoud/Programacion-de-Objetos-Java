@@ -64,12 +64,31 @@ public class Profesor {
     public void subirGrado(){
         if (datosPersonales.getGrado()=='T')
             datosPersonales.setGrado('L');
+        else
+            if (datosPersonales.getGrado()=='L')
+                datosPersonales.setGrado('M');
+            else
+                if (datosPersonales.getGrado()=='M')
+                    datosPersonales.setGrado('D');
+        asignaValorHora();
+    }
 
-        if (datosPersonales.getGrado()=='L')
-            datosPersonales.setGrado('M');
+    public void subirGradoOtro(){
+        switch (datosPersonales.getGrado()){
+            case 'T':
+                datosPersonales.setGrado('L');
+                break;
+            case 'L':
+                datosPersonales.setGrado('M');
+                break;
+            case 'M':
+                datosPersonales.setGrado('D');
+                break;
+        }
+        asignaValorHora();
+    }
 
-        if (datosPersonales.getGrado()=='M')
-            datosPersonales.setGrado('D');
-
+    public int sueldo(){
+        return (valorHora * cantidadHorasClases) + (valorHora * actividad.getCantidadHoras() + datosPersonales.aguinaldo());
     }
 }
