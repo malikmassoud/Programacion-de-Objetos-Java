@@ -1,33 +1,16 @@
 package Aerolinea;
 
+import com.sun.source.tree.BreakTree;
+
 public class Pasajero {
     private String nombre;
     private int edad;
     private Pasaje pasaje;
 
-    public Pasajero(String nombre, int edad, Pasaje pasaje) {
+    public Pasajero(String nombre, int edad,Pasaje pasaje){
         this.nombre = nombre;
         this.edad = edad;
         this.pasaje = pasaje;
-    }
-
-    public Pasajero() {
-    }
-
-    public Pasaje getPasaje() {
-        return pasaje;
-    }
-
-    public void setPasaje(Pasaje pasaje) {
-        this.pasaje = pasaje;
-    }
-
-    public int getEdad() {
-        return edad;
-    }
-
-    public void setEdad(int edad) {
-        this.edad = edad;
     }
 
     public String getNombre() {
@@ -38,19 +21,38 @@ public class Pasajero {
         this.nombre = nombre;
     }
 
-    public double descuento(){
-        if (edad<6)
-            return pasaje.getCantidadAbono() * 0.2;
-        if (pasaje.getCantidadAbono()>200000)
-            return pasaje.getCantidadAbono() * 0.15;
-
-
-        return 0;
+    public int getEdad() {
+        return edad;
     }
 
-    public double valorPasaje(){
+    public void setEdad(int edad) {
+        this.edad = edad;
+    }
+
+    public Pasaje getPasaje() {
+        return pasaje;
+    }
+
+    public void setPasaje(Pasaje pasaje) {
+        this.pasaje = pasaje;
+    }
+
+    public int descuento(){
+        double descuentoAbono = 0;
+        if (edad < 6 ){
+            descuentoAbono = pasaje.getCantidadAbono() * 1.20;
+            return (int)descuentoAbono ;
+        }
+        if (pasaje.getCantidadAbono()>=200000){
+            descuentoAbono = pasaje.getCantidadAbono() * 1.15;
+            return (int) descuentoAbono;
+        }
+        else
+            return 0;
+
+    }
+
+    public int valorPasaje(){
         return pasaje.getValorBase() - pasaje.getCantidadAbono() - descuento();
     }
-
-
 }
