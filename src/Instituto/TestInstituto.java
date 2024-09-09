@@ -74,7 +74,9 @@ public class TestInstituto {
                 case 3:
                     if (profesor != null) {
                         System.out.println("Usted recibira un aguinaldo de: $" + profesor.getDatosPersonales().aguinaldo());
-                    }
+                    }else
+                        System.out.println("Debe crear un profesor antes de elegir esta opcion: ");
+                    break;
 
 
 
