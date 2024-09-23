@@ -1,4 +1,4 @@
-package Aerolinea;
+package Instituto.Aerolinea;
 
 import java.util.Scanner;
 

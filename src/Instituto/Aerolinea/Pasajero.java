@@ -1,6 +1,4 @@
-package Aerolinea;
-
-import com.sun.source.tree.BreakTree;
+package Instituto.Aerolinea;
 
 public class Pasajero {
     private String nombre;

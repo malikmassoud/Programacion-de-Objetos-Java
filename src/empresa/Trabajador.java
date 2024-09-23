@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package bit;
+package empresa;
 
 /**
  *
@@ -67,8 +67,7 @@ public class Trabajador {
         return 10000;
     }
     
-    public int sueldoBruto()
-    {
+    public int sueldoBruto(){
         return (int)(cantidadHorasNormales*valorHora()+cantidadHorasExtras*valorHora()*1.5);
     }
 

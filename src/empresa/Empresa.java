@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package bit;
+package empresa;
 
 import java.util.ArrayList;
 
@@ -49,8 +49,7 @@ public class Empresa {
         return "\n\tTrabajador desvinculado de la empresa";
     }
     
-    public int cantidadProfesionales()
-    {
+    public int cantidadProfesionales()    {
         int cont=0;
         for (int i = 0; i < trabajadores.size(); i++) {
             if(trabajadores.get(i).getCargo().compareToIgnoreCase("profesional")==0)
@@ -71,6 +70,16 @@ public class Empresa {
             }
         }
         return pos;
+    }
+
+    public int cantidadDePersonasCasadas(){
+        int conta=0;
+        for (int i = 0; i < trabajadores.size(); i++){
+            if (trabajadores.get(i).getDatos().getEstadoCivil().compareToIgnoreCase("Casado") == 0)
+                conta++;
+        return conta;
+        }
+        return conta;
     }
     
     //Tarea hacer un método que devuelva la cantidad de trabajadores con estado civil XX
