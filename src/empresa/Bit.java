@@ -54,16 +54,27 @@ public class Bit {
                     cantidadHorasExtras=teclado.nextInt();
                     datosPersonanles = new DatosPersonales(rut, nombre,estadoCivil);
                     trabajador = new Trabajador(cargo,datosPersonanles,cantidadHorasNormales,cantidadHorasExtras);
-                    empresa.ingresarTrabajador(trabajadores.add(trabajador));
+                    System.out.println(empresa.ingresarTrabajador(trabajador));
+
                     break;
                 case 2:
                     teclado.nextLine();
                     System.out.println("Ingrese el rut del trabajador");
                     buscadorRut = teclado.nextLine();
-                    System.out.println(empresa.buscar(buscadorRut));
-                    break;
+                    int elTrabajador = empresa.buscar(buscadorRut);
+                    if(elTrabajador == -1){
+                        System.out.println("El trabajador no existe");
+                    }else {
+                        System.out.println("Rut del Trabajador: " + empresa.getTrabajadores().get(elTrabajador).getDatos().getRut());
+                        System.out.println("Nombre del Trabajador: " + empresa.getTrabajadores().get(elTrabajador).getDatos().getNombre());
+                        System.out.println("Estado Civil del Trabajador: " + empresa.getTrabajadores().get(elTrabajador).getDatos().getEstadoCivil());
+                        System.out.println("Cargo del Trabajador: " + empresa.getTrabajadores().get(elTrabajador).getCargo());
+                    }
 
+                    System.out.println(empresa.mostrarDatos(buscadorRut));
+                    break;
                 case 3:
+                    System.out.println("Cantidad de trabajadores bajo el cargo de profesionale son: " + empresa.cantidadProfesionales());
                     break;
 
             }

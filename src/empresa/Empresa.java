@@ -81,8 +81,35 @@ public class Empresa {
         }
         return conta;
     }
+
+    public String mostrarDatos(String rut){
+
+        int pos = buscar(rut);
+        if (pos == -1)
+            return "El trabajador no existe";
+        else
+        {
+            return "\n\tDatos del Trabajador"
+                   + "\nNombre: " + trabajadores.get(pos).getDatos().getNombre() +
+                    "\nRut: " +trabajadores.get(pos).getDatos().getRut() +
+                    "\nEstado Civil: " + trabajadores.get(pos).getDatos().getEstadoCivil() +
+                    "\nCargo: " + trabajadores.get(pos).getCargo() +
+                    "\nCantidad de horas trabajadas: " + trabajadores.get(pos).getCantidadHorasNormales() +
+                    "\nCantidad de horas extras: " + trabajadores.get(pos).getCantidadHorasExtras();
+
+        }
+    }
+
+    public String mostrarDatitos(String rut){
+        int pos=buscar(rut);
+        if (pos==-1){
+            return "\n\tTrabajador no existe....."
+        } else {
+            trabajadores.get(pos).mostrarDatos();
+        }
+    }
     
-    //Tarea hacer un método que devuelva la cantidad de trabajadores con estado civil XX
+
 
     
     

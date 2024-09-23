@@ -71,4 +71,11 @@ public class Trabajador {
         return (int)(cantidadHorasNormales*valorHora()+cantidadHorasExtras*valorHora()*1.5);
     }
 
+    public String mostrarDatos(){
+        return datos.mostrarDatos() +
+                "\nCargo: " + cargo +
+                "\nCantidad de horas trabajadas: " + cantidadHorasNormales +
+                "\nCantidad de horas extras: " + cantidadHorasExtras;
+    }
+
 }

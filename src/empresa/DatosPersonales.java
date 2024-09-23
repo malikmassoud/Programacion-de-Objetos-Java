@@ -46,12 +46,11 @@ public class DatosPersonales {
         this.estadoCivil = estadoCivil;
     }
 
-    @Override
-    public String toString() {
-        return "DatosPersonales{" +
-                "rut='" + rut + '\'' +
-                ", nombre='" + nombre + '\'' +
-                ", estadoCivil='" + estadoCivil + '\'' +
-                '}';
+
+    public String mostrarDatos() {
+        return "\n\tDatos del Trabajador"
+                + "\nNombre: " + nombre
+                + "\nEstado Civil: " + estadoCivil;
+
     }
 }
