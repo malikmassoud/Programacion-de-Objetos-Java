@@ -18,7 +18,10 @@ public class Bit {
      */
     public static void main(String[] args) {
         Scanner teclado = new Scanner(System.in);
-        int op;
+        int op, cantidadHorasExtras, cantidadHorasNormales;
+        String rut, nombre, estadoCivil, cargo, buscadorRut;
+        DatosPersonales datosPersonanles = null;
+        Trabajador trabajador = null;
         Empresa empresa = new Empresa();
         ArrayList <Trabajador> trabajadores=new ArrayList<Trabajador>();
 
@@ -34,9 +37,30 @@ public class Bit {
             op= teclado.nextInt();
             switch (op){
                 case 1:
-
-
+                    System.out.println("Ingresar Trabajador:");
+                    teclado.nextLine();
+                    System.out.println("***Primero Datos Personales del Trabajador***");
+                    System.out.println("Rut: ");
+                    rut = teclado.nextLine();
+                    System.out.println("Nombre: ");
+                    nombre = teclado.nextLine();
+                    System.out.println("Estado Civil: ");
+                    estadoCivil = teclado.nextLine();
+                    System.out.println("Cargo: ");
+                    cargo = teclado.nextLine();
+                    System.out.println("Cantidad de horas normales:  ");
+                    cantidadHorasNormales = teclado.nextInt();
+                    System.out.println("cantidad de horas extras: ");
+                    cantidadHorasExtras=teclado.nextInt();
+                    datosPersonanles = new DatosPersonales(rut, nombre,estadoCivil);
+                    trabajador = new Trabajador(cargo,datosPersonanles,cantidadHorasNormales,cantidadHorasExtras);
+                    empresa.ingresarTrabajador(trabajadores.add(trabajador));
+                    break;
                 case 2:
+                    teclado.nextLine();
+                    System.out.println("Ingrese el rut del trabajador");
+                    buscadorRut = teclado.nextLine();
+                    System.out.println(empresa.buscar(buscadorRut));
                     break;
 
                 case 3:
