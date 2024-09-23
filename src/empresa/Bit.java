@@ -18,48 +18,34 @@ public class Bit {
      */
     public static void main(String[] args) {
         Scanner teclado = new Scanner(System.in);
-
-        DatosPersonales datosPersonales = new DatosPersonales();
-        DatosPersonales datosPersonales2 = new DatosPersonales();
-
-        Trabajador trabajador = new Trabajador();
-        Trabajador trabajador2 = new Trabajador();
-
+        int op;
         Empresa empresa = new Empresa();
         ArrayList <Trabajador> trabajadores=new ArrayList<Trabajador>();
 
+        do {
+            System.out.println("Menu Bit & Bit");
+            System.out.println("1. Ingresar Trabajador");
+            System.out.println("2. Mostrar los datos del trabajador X");
+            System.out.println("3. Cantidade de profesionales");
+            System.out.println("4. Nombre y rut del trabajador con mayor sueldo bruto");
+            System.out.println("5. Eliminar un trabajador");
+            System.out.println("6. Salir");
+            System.out.println("Ingrese una opcion: ");
+            op= teclado.nextInt();
+            switch (op){
+                case 1:
 
 
-        datosPersonales.setNombre("Paulo");
-        datosPersonales.setRut("203885660");
-        datosPersonales.setEstadoCivil("Casado");
+                case 2:
+                    break;
 
-        datosPersonales2.setNombre("Sofia Cenzano");
-        datosPersonales2.setRut("1467864639");
-        datosPersonales2.setEstadoCivil("Casado");
+                case 3:
+                    break;
 
-        System.out.println(datosPersonales.toString());
-        System.out.println(datosPersonales2.toString());
+            }
 
-        trabajador.setCargo("Profesional");
-        trabajador.setDatos(datosPersonales);
-        trabajador.setCantidadHorasNormales(45);
-        trabajador.setCantidadHorasExtras(10);
+        }while(op!=6);
 
-        trabajador2.setCargo("Profesional");
-        trabajador2.setDatos(datosPersonales2);
-        trabajador2.setCantidadHorasNormales(45);
-        trabajador2.setCantidadHorasExtras(10);
-
-        System.out.println(trabajador.toString());
-        System.out.println(trabajador2.toString());
-
-        trabajadores.add(trabajador);
-        trabajadores.add(trabajador2);
-
-        empresa.setTrabajadores(trabajadores);
-        System.out.println(empresa.cantidadProfesionales());
-        System.out.println(empresa.cantidadDePersonasCasadas());
     }
     
 }

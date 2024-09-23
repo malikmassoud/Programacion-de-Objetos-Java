@@ -77,7 +77,7 @@ public class Empresa {
         for (int i = 0; i < trabajadores.size(); i++){
             if (trabajadores.get(i).getDatos().getEstadoCivil().compareToIgnoreCase("Casado") == 0)
                 conta++;
-        return conta;
+
         }
         return conta;
     }
