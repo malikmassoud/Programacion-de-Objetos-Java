@@ -1,4 +1,4 @@
-package Instituto.Aerolinea;
+package Aerolinea;
 
 public class Pasajero {
     private String nombre;
