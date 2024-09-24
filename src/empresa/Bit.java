@@ -19,7 +19,7 @@ public class Bit {
     public static void main(String[] args) {
         Scanner teclado = new Scanner(System.in);
         int op, cantidadHorasExtras, cantidadHorasNormales;
-        String rut, nombre, estadoCivil, cargo, buscadorRut;
+        String rut, nombre, estadoCivil, cargo, buscadorRut, eliminarRut;
         DatosPersonales datosPersonanles = null;
         Trabajador trabajador = null;
         Empresa empresa = new Empresa();
@@ -75,6 +75,23 @@ public class Bit {
                     break;
                 case 3:
                     System.out.println("Cantidad de trabajadores bajo el cargo de profesionale son: " + empresa.cantidadProfesionales());
+                    break;
+                case 4:
+                    int pos=empresa.mayorSueldoBruto();
+                    if (pos==-1){
+                        System.out.println("¡¡¡La empresa no tiene trabajadores!!!");
+                    } else {
+                        System.out.println("Trabajador mayor sueldo bruto: ");
+                        System.out.println("Nombre: " + empresa.getTrabajadores().get(pos).getDatos().getNombre());
+                        System.out.println("Rut: " + empresa.getTrabajadores().get(pos).getDatos().getRut());
+                        System.out.println("Sueldo Bruto: " + empresa.getTrabajadores().get(pos).sueldoBruto());
+
+                    }
+                case 5:
+                    System.out.println("Ingrese el rut del trabajador que quiere elimianr: ");
+                    teclado.nextLine();
+                    eliminarRut = teclado.nextLine();
+                    System.out.println(empresa.eliminarTrabajador(eliminarRut));
                     break;
 
             }

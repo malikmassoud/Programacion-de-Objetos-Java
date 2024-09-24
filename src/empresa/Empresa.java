@@ -103,9 +103,9 @@ public class Empresa {
     public String mostrarDatitos(String rut){
         int pos=buscar(rut);
         if (pos==-1){
-            return "\n\tTrabajador no existe....."
+            return "\n\tTrabajador no existe.....";
         } else {
-            trabajadores.get(pos).mostrarDatos();
+            return trabajadores.get(pos).mostrarDatos();
         }
     }
     
